@@ -1,0 +1,369 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #050505;
+  --color-navy: #101018;
+  --color-accent: #a100ff;
+  --color-accent-warm: #d9a7ff;
+  --color-blue: #4de3ff;
+  --color-violet: #a100ff;
+  --color-cyan: #4de3ff;
+  --color-soft: #f3f3f6;
+  --color-line: #dedee6;
+  --color-muted: #5c5c68;
+
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-ff), ui-monospace, monospace;
+}
+
+/* Les titres utilisent la police display, le corps la police body */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* ---- Corporate hover cards ---- */
+.dh-hover-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: var(--color-ink);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.dh-hover-card::before {
+  content: "";
+  width: 3.125rem;
+  height: 0.25rem;
+  background: var(--color-accent);
+  margin-bottom: 2rem;
+  transition: width 180ms ease;
+}
+
+.dh-hover-card:hover {
+  background: #050505;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(161, 0, 255, 0.45);
+}
+
+.dh-hover-card:hover::before {
+  width: 4.5rem;
+}
+
+.dh-hover-card-dark {
+  background: #050505;
+  color: #fff;
+}
+
+.dh-hover-card-dark:hover {
+  background: #fff;
+  color: #050505;
+}
+
+.dh-card-muted {
+  color: var(--color-muted);
+  transition: color 180ms ease;
+}
+
+.dh-hover-card:hover .dh-card-muted {
+  color: #d4d4d8;
+}
+
+.dh-hover-card-dark .dh-card-muted {
+  color: #a1a1aa;
+}
+
+.dh-hover-card-dark:hover .dh-card-muted {
+  color: rgba(5, 5, 5, 0.68);
+}
+
+.dh-card-link {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.dh-cta-violet {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.dh-cta-violet .eyebrow,
+.dh-cta-violet p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.dh-cta-violet h2,
+.dh-cta-violet h3 {
+  color: #fff;
+}
+
+.dh-mobile-cta-title {
+  font-size: clamp(2.4rem, 11vw, 4.2rem);
+  line-height: 0.98;
+}
+
+@media (min-width: 768px) {
+  .dh-mobile-cta-title {
+    font-size: 4.5rem;
+  }
+}
+
+/* ---- Eyebrow / mono label ---- */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ---- Gradient mesh blobs (atmosphere) ---- */
+.mesh {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.mesh::before,
+.mesh::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.5;
+}
+.mesh::before {
+  width: 38rem;
+  height: 38rem;
+  top: -14rem;
+  right: -10rem;
+  background: linear-gradient(135deg, #a100ff, #4de3ff 55%, transparent 70%);
+  opacity: 0.45;
+}
+.mesh::after {
+  width: 30rem;
+  height: 30rem;
+  bottom: -12rem;
+  left: -8rem;
+  background: linear-gradient(135deg, #4de3ff, #101018 60%, transparent 74%);
+  opacity: 0.3;
+}
+
+/* ---- Subtle grain overlay ---- */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- Aurora animée (fond "vidéo" du hero) ---- */
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+.aurora-1 {
+  width: 46rem;
+  height: 46rem;
+  top: -16rem;
+  left: -8rem;
+  background: linear-gradient(135deg, #a100ff, #4de3ff 45%, transparent 70%);
+  animation: drift1 18s ease-in-out infinite;
+}
+.aurora-2 {
+  width: 40rem;
+  height: 40rem;
+  top: -6rem;
+  right: -10rem;
+  background: linear-gradient(135deg, #6f00c9, #101018 45%, transparent 70%);
+  animation: drift2 22s ease-in-out infinite;
+}
+.aurora-3 {
+  width: 38rem;
+  height: 38rem;
+  bottom: -18rem;
+  left: 30%;
+  background: linear-gradient(135deg, #4de3ff, #a100ff 45%, transparent 70%);
+  animation: drift3 26s ease-in-out infinite;
+}
+@keyframes drift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.18); }
+}
+@keyframes drift2 {
+  0%, 100% { transform: translate(0, 0) scale(1.05); }
+  50% { transform: translate(-50px, 50px) scale(0.9); }
+}
+@keyframes drift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -40px) scale(1.2); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob {
+    animation: none;
+  }
+}
+
+/* Grille fine en overlay (texture tech) */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+
+/* Lueur autour des mockups */
+.glow {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 30px 80px -20px rgba(62, 166, 255, 0.4),
+    0 20px 60px -30px rgba(11, 29, 58, 0.45);
+}
+
+/* ---- Browser frame (product mockups) ---- */
+.browser {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--color-line);
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.02),
+    0 30px 60px -20px rgba(12, 12, 13, 0.25),
+    0 12px 24px -12px rgba(12, 12, 13, 0.18);
+}
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 14px;
+  background: #fafafa;
+  border-bottom: 1px solid var(--color-line);
+}
+.browser-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 9999px;
+  background: #e2e2e0;
+}
+
+/* ---- Marquee (logo cloud / band) ---- */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ---- Float animation for mockups ---- */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee,
+  .float {
+    animation: none;
+  }
+}
+
+/* ---- Link underline sweep ---- */
+.link-sweep {
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+}
+.link-sweep:hover {
+  background-size: 100% 2px;
+}
+
+/* ---- Article typography ---- */
+.prose-dh h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 2.2rem 0 0.75rem;
+}
+.prose-dh p {
+  margin: 0.85rem 0;
+  line-height: 1.8;
+  color: #2b2a28;
+  font-size: 1.05rem;
+}
+.prose-dh ul,
+.prose-dh ol {
+  margin: 0.85rem 0 0.85rem 1.25rem;
+  line-height: 1.8;
+  color: #2b2a28;
+}
+.prose-dh ol {
+  list-style: decimal;
+}
+.prose-dh ul {
+  list-style: disc;
+}
+.prose-dh a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-dh strong {
+  color: var(--color-ink);
+  font-weight: 700;
+}
