@@ -15,6 +15,7 @@ export default function ProduitsPage() {
         title="Nos actifs technologiques naissent des besoins clients."
         subtitle="Nous conseillons, integrons et operons. Puis nous capitalisons ce que le marche repete en produits, accelerateurs et plateformes reutilisables."
         scene="spark"
+        image="/domains/Generative AI & LLMs.png"
       />
       <section className="bg-black py-20 text-white md:py-24">
         <Container>
@@ -42,7 +43,7 @@ export default function ProduitsPage() {
                 href={`/produits/${p.slug}`}
                 className="dh-hover-card dh-hover-card-dark group min-h-96"
               >
-                <div className="flex h-44 items-center justify-center border-b border-white/10">
+                <div className="flex h-[200px] items-center justify-center border-b border-white/10">
                   {p.image ? (
                     <Image
                       src={p.image}
@@ -52,7 +53,7 @@ export default function ProduitsPage() {
                       className={`h-20 w-auto object-contain${p.slug === "jurisis" || p.slug === "indibot" ? " brightness-0 invert" : ""}`}
                     />
                   ) : (
-                    <SceneIllustration scene={p.scene} tone="light" className="h-44 w-full" />
+                    <SceneIllustration scene={p.scene} tone="light" className="h-[200px] w-full" />
                   )}
                 </div>
                 <div className="flex flex-1 flex-col p-8">

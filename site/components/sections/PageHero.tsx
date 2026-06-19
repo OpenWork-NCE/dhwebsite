@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SceneIllustration from "@/components/visuals/SceneIllustration";
 import TechBackground from "@/components/visuals/TechBackground";
@@ -9,11 +10,13 @@ export default function PageHero({
   title,
   subtitle,
   scene = "ai",
+  image,
 }: {
   eyebrow: string;
   title: string;
   subtitle?: string;
   scene?: Scene;
+  image?: string;
   tint?: string;
 }) {
   return (
@@ -28,8 +31,15 @@ export default function PageHero({
           </h1>
           {subtitle && <p className="mt-6 max-w-2xl text-lg leading-8 text-neutral-300">{subtitle}</p>}
         </div>
-        <div className="hidden border border-white/10 bg-white/[0.03] p-5 shadow-2xl shadow-accent/10 lg:block">
-          <SceneIllustration scene={scene} tone="light" className="my-24 w-full" />
+        <div className="relative hidden h-[400px] overflow-hidden border border-white/10 bg-white/[0.03] shadow-2xl shadow-accent/10 lg:block">
+          {image ? (
+            <>
+              <Image src={image} alt={eyebrow} width={600} height={400} className="h-[400px] w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-accent/10" />
+            </>
+          ) : (
+            <SceneIllustration scene={scene} tone="light" className="h-[400px] w-full" />
+          )}
         </div>
       </Container>
     </section>

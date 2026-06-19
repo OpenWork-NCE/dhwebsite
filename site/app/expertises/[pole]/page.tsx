@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import SceneIllustration from "@/components/visuals/SceneIllustration";
@@ -43,8 +44,15 @@ export default async function PolePage({ params }: { params: Promise<{ pole: str
               </Button>
             </div>
           </div>
-          <div className="hidden border border-white/10 bg-white/[0.03] p-5 shadow-2xl shadow-accent/10 lg:block">
-            <SceneIllustration scene={p.scene} tone="light" className="my-24 w-full" />
+          <div className="relative hidden h-[400px] overflow-hidden border border-white/10 bg-white/[0.03] shadow-2xl shadow-accent/10 lg:block">
+            {p.image ? (
+              <>
+                <Image src={p.image} alt={p.nom} width={600} height={400} className="h-[400px] w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-accent/10" />
+              </>
+            ) : (
+              <SceneIllustration scene={p.scene} tone="light" className="h-[400px] w-full" />
+            )}
           </div>
         </Container>
       </section>

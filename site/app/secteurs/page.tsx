@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/sections/PageHero";
 import SceneIllustration from "@/components/visuals/SceneIllustration";
@@ -14,6 +15,7 @@ export default function SecteursPage() {
         title="Des offres de transformation adaptees a chaque secteur."
         subtitle="Nous combinons expertise metier, IA, data, cyber, cloud et adoption pour construire des cas d'usage utiles dans six environnements prioritaires."
         scene="building"
+        image="/domains/Technology governance.png"
       />
       <section className="bg-white py-20 text-ink md:py-24">
         <Container>
@@ -41,8 +43,15 @@ export default function SecteursPage() {
                 href={`/secteurs/${s.slug}`}
                 className="dh-hover-card group min-h-96"
               >
-                <div className="border-b border-line group-hover:border-white/10">
-                  <SceneIllustration scene={s.scene} className="h-40 w-full" />
+                <div className="relative overflow-hidden border-b border-line group-hover:border-white/10">
+                  {s.image ? (
+                    <>
+                      <Image src={s.image} alt={s.titre} width={400} height={200} className="h-[200px] w-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-accent/5" />
+                    </>
+                  ) : (
+                    <SceneIllustration scene={s.scene} className="h-[200px] w-full" />
+                  )}
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <span className="font-mono text-xs text-accent">

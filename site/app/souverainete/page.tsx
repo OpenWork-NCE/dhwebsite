@@ -36,6 +36,7 @@ export default function SouverainetePage() {
         title="La performance numerique ne doit pas creer une dependance invisible."
         subtitle="Digital House aide les organisations a arbitrer entre vitesse, cout, securite, conformite et autonomie technologique."
         scene="shield"
+        image="/domains/Cybersécurité.png"
       />
 
       <section className="bg-white py-20 text-ink md:py-24">

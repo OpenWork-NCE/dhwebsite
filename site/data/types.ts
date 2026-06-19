@@ -35,6 +35,7 @@ export interface Secteur {
   casUsage: string[];
   technologies: string[];
   scene: Scene;
+  image?: string;
 }
 
 export interface Solution {

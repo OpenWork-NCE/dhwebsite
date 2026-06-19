@@ -16,6 +16,7 @@ export interface Pole {
   technologies: string[];
   formats: string[];
   scene: Scene;
+  image?: string;
 }
 
 export const poles: Pole[] = [
@@ -73,6 +74,7 @@ export const poles: Pole[] = [
       "Accompagnement de direction",
     ],
     scene: "ai",
+    image: "/domains/Conseil & Stratégie.png",
   },
   {
     slug: "construire",
@@ -133,6 +135,7 @@ export const poles: Pole[] = [
     ],
     formats: ["Projet au forfait", "Integration & revente", "Build sur mesure", "POC agent IA"],
     scene: "code",
+    image: "/domains/Ingénierie Logicielle.png",
   },
   {
     slug: "operer",
@@ -174,6 +177,7 @@ export const poles: Pole[] = [
     technologies: ["Monitoring", "SLA", "MLOps", "FinOps", "Observabilite", "Runbooks"],
     formats: ["Abonnement mensuel", "Forfait de run", "Astreinte et support", "Direction externalisee"],
     scene: "signal",
+    image: "/domains/MLOps.png",
   },
   {
     slug: "former",
@@ -206,6 +210,7 @@ export const poles: Pole[] = [
     technologies: ["Certifiant", "Intra & inter", "En ligne", "Presentiel", "Executive workshops"],
     formats: ["Formation sur catalogue", "Programme sur mesure", "Conference / keynote", "Academie interne"],
     scene: "learn",
+    image: "/domains/AI strategy.png",
   },
   {
     slug: "investir",
@@ -249,5 +254,6 @@ export const poles: Pole[] = [
     technologies: ["SaaS", "Licences", "R&D", "Open-weight", "MCP", "Partenariats"],
     formats: ["Licence produit", "SaaS", "Partenariat de distribution", "POC emergent"],
     scene: "spark",
+    image: "/domains/Generative AI & LLMs.png",
   },
 ];

@@ -13,6 +13,7 @@ export const secteurs: Secteur[] = [
     ],
     technologies: ["Claude", "RAG", "Power BI", "Databricks"],
     scene: "heart",
+    image: "/domains/User research.png",
   },
   {
     slug: "industrie",
@@ -26,6 +27,7 @@ export const secteurs: Secteur[] = [
     ],
     technologies: ["Odoo", "ERPNext", "SCADA", "Power BI"],
     scene: "transform",
+    image: "/domains/Sector-specific AI.png",
   },
   {
     slug: "secteur-public",
@@ -39,6 +41,7 @@ export const secteurs: Secteur[] = [
     ],
     technologies: ["OVHcloud", "Mistral", "SharePoint", "CyFun"],
     scene: "building",
+    image: "/domains/Compliance readiness.png",
   },
   {
     slug: "pme-independants",
@@ -52,6 +55,7 @@ export const secteurs: Secteur[] = [
     ],
     technologies: ["Indibot", "n8n", "Odoo", "HubSpot"],
     scene: "spark",
+    image: "/domains/Cognitive automation.png",
   },
   {
     slug: "droit",
@@ -65,6 +69,7 @@ export const secteurs: Secteur[] = [
     ],
     technologies: ["Jurisis", "RAG", "Agents IA"],
     scene: "scale",
+    image: "/domains/Cyber awareness.png",
   },
   {
     slug: "education",
@@ -78,6 +83,7 @@ export const secteurs: Secteur[] = [
     ],
     technologies: ["FormIA", "Moodle", "Articulate 360"],
     scene: "book",
+    image: "/domains/Service design.png",
   },
   {
     slug: "finance",
@@ -91,6 +97,7 @@ export const secteurs: Secteur[] = [
     ],
     technologies: ["Security", "Compliance", "UX", "Cloud"],
     scene: "chart",
+    image: "/domains/Enterprise architecture.png",
   },
   {
     slug: "communication",
@@ -104,5 +111,6 @@ export const secteurs: Secteur[] = [
     ],
     technologies: ["CMS", "Newsletter", "SEO", "Analytics"],
     scene: "signal",
+    image: "/domains/UX analysis.png",
   },
 ];

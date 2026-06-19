@@ -1,10 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import LogoCloud from "@/components/visuals/LogoCloud";
 import TechBackground from "@/components/visuals/TechBackground";
-import SceneIllustration from "@/components/visuals/SceneIllustration";
 import { HOME_REINVENTION, SITE } from "@/data/site";
 
 export default function Home() {
@@ -137,9 +137,12 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="border border-white/15 bg-white/[0.04] p-8">
-                <SceneIllustration scene="signal" tone="light" className="h-56 w-full" />
-                <div className="mt-8 border-t border-white/10 pt-6">
+              <div className="border border-white/15 bg-white/[0.04]">
+                <div className="relative h-[260px] overflow-hidden">
+                  <Image src="/domains/Transformation roadmap.png" alt="Notre difference" width={600} height={260} className="h-[260px] w-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-accent/10" />
+                </div>
+                <div className="p-8 pt-6">
                   <p className="font-display text-2xl font-black">Souverainete par conception</p>
                   <p className="mt-3 text-sm leading-7 text-neutral-400">
                     Chaque choix technologique est pense selon la sensibilite des donnees, le risque,

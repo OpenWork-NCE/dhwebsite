@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/sections/PageHero";
 import CorporateServices from "@/components/sections/CorporateServices";
@@ -17,6 +18,7 @@ export default function ExpertisesPage() {
         title="Les capacites d'un cabinet de transformation, l'agilite d'une equipe terrain."
         subtitle="Strategie, IA, data, cloud, cyber, experience client, operations, learning et services manages : Digital House couvre la chaine complete de la reinvention numerique."
         scene="code"
+        image="/domains/Ingénierie Logicielle.png"
       />
 
       <CorporateServices />
@@ -64,8 +66,15 @@ export default function ExpertisesPage() {
                     <span className="transition-transform group-hover:translate-x-0.5">-&gt;</span>
                   </span>
                 </div>
-                <div className="hidden md:block">
-                  <SceneIllustration scene={p.scene} tone="light" className="h-full w-full" />
+                <div className="relative hidden h-full overflow-hidden md:block">
+                  {p.image ? (
+                    <>
+                      <Image src={p.image} alt={p.nom} width={220} height={180} className="h-full w-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-l from-black/50 via-black/20 to-accent/5" />
+                    </>
+                  ) : (
+                    <SceneIllustration scene={p.scene} tone="light" className="h-full w-full" />
+                  )}
                 </div>
               </Link>
             ))}

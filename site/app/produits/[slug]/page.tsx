@@ -38,17 +38,20 @@ export default async function ProduitPage({ params }: { params: Promise<{ slug: 
               </Button>
             </div>
           </div>
-          <div className="hidden border border-white/10 bg-white/[0.03] p-5 shadow-2xl shadow-accent/10 lg:block">
+          <div className="relative hidden h-[400px] items-center justify-center overflow-hidden border border-white/10 bg-white/[0.03] p-5 shadow-2xl shadow-accent/10 lg:flex">
             {produit.image ? (
-              <Image
-                src={produit.image}
-                alt={produit.nom}
-                width={400}
-                height={300}
-                className={`my-24 w-full object-contain${produit.slug === "jurisis" || produit.slug === "indibot" ? " brightness-0 invert" : ""}`}
-              />
+              <>
+                <Image
+                  src={produit.image}
+                  alt={produit.nom}
+                  width={400}
+                  height={300}
+                  className={`relative z-10 max-h-48 w-auto object-contain${produit.slug === "jurisis" || produit.slug === "indibot" ? " brightness-0 invert" : ""}`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-accent/5" />
+              </>
             ) : (
-              <SceneIllustration scene={produit.scene} tone="light" className="w-full" />
+              <SceneIllustration scene={produit.scene} tone="light" className="h-[400px] w-full" />
             )}
           </div>
         </Container>

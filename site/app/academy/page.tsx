@@ -29,6 +29,7 @@ export default function AcademyPage() {
         title="Former les equipes pour que la transformation reste dans l'entreprise."
         subtitle="Des parcours concrets, bases sur vos cas reels, pour dirigeants, managers, equipes metier et profils techniques."
         scene="learn"
+        image="/domains/AI strategy.png"
       />
 
       <section className="bg-white py-20 text-ink md:py-24">

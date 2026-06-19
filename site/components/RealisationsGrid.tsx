@@ -37,17 +37,20 @@ export default function RealisationsGrid() {
       <div className="mt-8 grid gap-px overflow-hidden border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
         {liste.map((r) => (
           <article key={r.slug} className="dh-hover-card group min-h-96">
-            <div className="relative border-b border-line group-hover:border-white/10">
+            <div className="relative overflow-hidden border-b border-line group-hover:border-white/10">
               {r.image ? (
-                <Image
-                  src={r.image}
-                  alt={r.titre}
-                  width={400}
-                  height={220}
-                  className="h-36 w-full object-cover"
-                />
+                <>
+                  <Image
+                    src={r.image}
+                    alt={r.titre}
+                    width={400}
+                    height={200}
+                    className="h-[200px] w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-accent/5" />
+                </>
               ) : (
-                <SceneIllustration scene={secteurScene(r.secteur)} className="h-36 w-full" />
+                <SceneIllustration scene={secteurScene(r.secteur)} className="h-[200px] w-full" />
               )}
             </div>
             <div className="flex flex-1 flex-col p-6">

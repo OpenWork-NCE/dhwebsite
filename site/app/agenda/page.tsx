@@ -34,6 +34,7 @@ export default function AgendaPage() {
         title="Briefings, ateliers et rencontres pour passer a l'action."
         subtitle="Des formats courts pour comprendre, tester et engager vos equipes sur l'IA, la data, la cybersecurite et la transformation."
         scene="learn"
+        image="/domains/Cyber training.png"
       />
       <section className="bg-white py-20 text-ink md:py-24">
         <Container>
