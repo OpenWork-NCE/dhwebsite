@@ -12,6 +12,10 @@ export interface Produit {
   cta: { label: string; href: string };
   scene: Scene;
   image?: string;
+  casUsage?: string[];
+  metriques?: { valeur: string; label: string }[];
+  stack?: string[];
+  faq?: { question: string; reponse: string }[];
 }
 
 export const produits: Produit[] = [
@@ -33,6 +37,23 @@ export const produits: Produit[] = [
     pour: ["Organismes de formation", "Formateurs independants", "Services RH et L&D"],
     cta: { label: "Demander une demo", href: "/contact" },
     scene: "learn",
+    casUsage: [
+      "Generer un programme certifiant complet en moins d'une heure",
+      "Adapter un parcours existant a un nouveau public ou secteur",
+      "Produire les livrables exiges par les financeurs (OPCO, CPF)",
+      "Structurer une academie interne multi-parcours",
+    ],
+    metriques: [
+      { valeur: "80%", label: "de temps de conception economise" },
+      { valeur: "4h", label: "pour un programme complet" },
+      { valeur: "100%", label: "conforme aux cadres certifiants" },
+    ],
+    stack: ["GPT-4", "Claude", "Next.js", "Vercel"],
+    faq: [
+      { question: "FormIA remplace-t-il le formateur ?", reponse: "Non. FormIA genere une base structuree que le formateur valide, enrichit et personnalise. Le formateur reste le pilote." },
+      { question: "Les programmes sont-ils conformes aux exigences Qualiopi ?", reponse: "Oui. La trame generee respecte les attendus des parcours certifiants : objectifs, prerequis, modalites, evaluation et durees." },
+      { question: "Peut-on adapter un programme a un secteur specifique ?", reponse: "Oui. FormIA permet de specifier le secteur, le niveau du public et les contraintes metier pour generer un programme contextualise." },
+    ],
   },
   {
     slug: "jurisis",
@@ -53,6 +74,24 @@ export const produits: Produit[] = [
     cta: { label: "Demander une demo", href: "/contact" },
     scene: "scale",
     image: "/products/jurisis.webp",
+    casUsage: [
+      "Recherche dans une base documentaire juridique",
+      "Preparation d'une note ou synthese juridique",
+      "Qualification et classification de documents",
+      "Assistance a l'analyse de dossiers complexes",
+      "Exploration de contenus reglementaires",
+    ],
+    metriques: [
+      { valeur: "70%", label: "de temps de recherche economise" },
+      { valeur: "100%", label: "des reponses sourcees" },
+      { valeur: "RGPD", label: "conforme par conception" },
+    ],
+    stack: ["LLM", "RAG", "Vector DB", "Next.js", "Sanity"],
+    faq: [
+      { question: "Les reponses sont-elles fiables ?", reponse: "Chaque reponse cite ses sources avec references precises. L'utilisateur peut verifier immediatement la base legale." },
+      { question: "Mes donnees sont-elles protegees ?", reponse: "L'architecture est pensee pour la confidentialite : pas de partage de donnees entre utilisateurs, hebergement conforme RGPD." },
+      { question: "Jurisis fonctionne-t-il avec le droit belge uniquement ?", reponse: "La version actuelle couvre le droit belge. L'architecture permet d'etendre a d'autres juridictions sur demande." },
+    ],
   },
   {
     slug: "indibot",
@@ -73,6 +112,24 @@ export const produits: Produit[] = [
     cta: { label: "Decouvrir Indibot", href: "/contact" },
     scene: "spark",
     image: "/products/indibot.webp",
+    casUsage: [
+      "Qualification de prospects sur un site web",
+      "Accueil digital et orientation des visiteurs",
+      "Support de premier niveau 24/7",
+      "Collecte d'informations avant rendez-vous",
+      "Assistance evenementielle ou formation",
+    ],
+    metriques: [
+      { valeur: "60%", label: "des demandes qualifiees automatiquement" },
+      { valeur: "24/7", label: "disponibilite sans intervention" },
+      { valeur: "3x", label: "plus de leads qualifies" },
+    ],
+    stack: ["Next.js", "Sanity", "AI SDK", "Vercel"],
+    faq: [
+      { question: "Indibot peut-il etre personnalise a mon metier ?", reponse: "Oui. Les scenarios de conversation sont configures selon votre activite, vos services et votre ton de communication." },
+      { question: "Que se passe-t-il si le bot ne sait pas repondre ?", reponse: "Indibot peut transferer la conversation vers un humain a tout moment, avec le contexte deja collecte." },
+      { question: "Combien de temps pour le deployer ?", reponse: "Un premier bot fonctionnel peut etre deploye en quelques jours. Les scenarios avances prennent 2 a 4 semaines." },
+    ],
   },
   {
     slug: "ia4africa",
@@ -92,6 +149,22 @@ export const produits: Produit[] = [
     pour: ["Institutions africaines", "Entreprises panafricaines", "Acteurs de la formation"],
     cta: { label: "En savoir plus", href: "/contact" },
     scene: "book",
+    casUsage: [
+      "Cartographie des initiatives IA par pays et secteur",
+      "Analyse des conditions de deploiement IA en Afrique",
+      "Ressources pour la formation et le transfert de competences",
+      "Reference pour les politiques publiques et la gouvernance IA",
+    ],
+    metriques: [
+      { valeur: "54", label: "pays africains couverts" },
+      { valeur: "200+", label: "cas d'usage documentes" },
+      { valeur: "2", label: "continents : Afrique & Europe" },
+    ],
+    stack: ["Next.js", "Sanity CMS", "Vercel"],
+    faq: [
+      { question: "ia4africa est-il un produit commercial ?", reponse: "C'est une plateforme de reference ouverte. Les prestations associees (formation, conseil, accompagnement) sont proposees par Digital House." },
+      { question: "Le contenu est-il mis a jour ?", reponse: "Oui. Les analyses et cas d'usage sont actualises regulierement en fonction des evolutions du marche africain." },
+    ],
   },
   {
     slug: "figmani",
@@ -112,6 +185,18 @@ export const produits: Produit[] = [
     cta: { label: "Visiter Figmani.be", href: "/contact" },
     scene: "code",
     image: "/products/LOGO-FIGMANI.png",
+    casUsage: [
+      "Formation Figma pour equipes design et produit",
+      "Structuration d'un UI kit reutilisable",
+      "Creation de composants et variants",
+      "Documentation de design system",
+      "Amelioration de la collaboration design-developpement",
+    ],
+    stack: ["Figma", "Design tokens", "Storybook", "React"],
+    faq: [
+      { question: "Figmani propose-t-il des formations ?", reponse: "Oui. Des formations Figma sont disponibles via Digital House Academy, du niveau debutant a avance." },
+      { question: "Les ressources sont-elles gratuites ?", reponse: "Le hub editorial est en acces libre. Les prestations de design system ou accompagnement UI sont sur devis." },
+    ],
   },
   {
     slug: "uxdesign-cm",
@@ -132,5 +217,17 @@ export const produits: Produit[] = [
     cta: { label: "Visiter UXDesign.cm", href: "/contact" },
     scene: "learn",
     image: "/products/uxdesign.png",
+    casUsage: [
+      "Formation et acculturation UX",
+      "Veille design et produit",
+      "Support pedagogique pour equipes numeriques",
+      "Publication d'analyses UX",
+      "Renforcement de l'autorite editoriale",
+    ],
+    stack: ["Next.js", "Sanity CMS", "Figma", "Vercel"],
+    faq: [
+      { question: "UXDesign.cm est-il reserve au marche africain ?", reponse: "Le contenu est adapte aux marches africains et francophones, mais les bonnes pratiques UX sont universelles." },
+      { question: "Proposez-vous des audits UX ?", reponse: "Oui. Les audits UX sont realises par Digital House dans le cadre de missions de design et accompagnement produit." },
+    ],
   },
 ];

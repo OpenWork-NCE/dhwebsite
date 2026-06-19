@@ -33,6 +33,10 @@ export const metadata: Metadata = {
   },
   description:
     "IA, data, cloud, cybersecurite et formation : Digital House accompagne les entreprises dans leur transformation numerique.",
+  icons: {
+    icon: "/dhc.png",
+    apple: "/dhc.png",
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
