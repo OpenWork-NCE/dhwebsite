@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { SITE } from "@/data/site";
+import Button from "@/components/ui/Button";
 
 const COLS = [
   {
@@ -47,14 +49,9 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3 md:justify-end">
-            <a
-              href={SITE.rdvUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#8700d4]"
-            >
+            <Button href={SITE.rdvUrl} variant="primary">
               Parler de votre projet
-            </a>
+            </Button>
             <a
               href={`mailto:${SITE.email}`}
               className="rounded-full border border-white/25 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10"

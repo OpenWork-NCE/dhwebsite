@@ -51,6 +51,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" data-scroll-behavior="smooth">
+      <head>
+        <link href="https://meetings.brevo.com/assets/styles/popup.css" rel="stylesheet" />
+        <script src="https://meetings.brevo.com/assets/libs/popup.min.js" defer />
+      </head>
       <body
         className={`${display.variable} ${body.variable} ${mono.variable} font-body flex min-h-screen flex-col bg-white text-ink antialiased`}
       >

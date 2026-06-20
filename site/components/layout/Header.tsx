@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { SITE } from "@/data/site";
+import Button from "@/components/ui/Button";
 
 const NAV = [
   {
@@ -119,14 +120,9 @@ export default function Header() {
             <Link href="/actualites" className="font-display text-[15px] font-black uppercase text-neutral-300 hover:text-white">
               Insights
             </Link>
-            <a
-              href={SITE.rdvUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#8700d4]"
-            >
+            <Button href={SITE.rdvUrl} variant="primary">
               Rendez-vous
-            </a>
+            </Button>
           </div>
 
           <button className="lg:hidden" onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}>
@@ -167,15 +163,9 @@ export default function Header() {
                   ))}
               </div>
             ))}
-            <a
-              href={SITE.rdvUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 block rounded-full bg-accent px-4 py-3 text-center text-sm font-semibold text-white"
-              onClick={() => setOpen(false)}
-            >
+            <Button href={SITE.rdvUrl} variant="primary">
               Prendre rendez-vous
-            </a>
+            </Button>
           </nav>
         )}
       </header>
