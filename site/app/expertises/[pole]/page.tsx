@@ -4,7 +4,6 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import SceneIllustration from "@/components/visuals/SceneIllustration";
-import TechBackground from "@/components/visuals/TechBackground";
 import { poles } from "@/data/poles";
 import { SITE } from "@/data/site";
 import { ArrowRight, Cpu, Layers, Rocket, Users } from "lucide-react";
@@ -31,7 +30,6 @@ export default async function PolePage({ params }: { params: Promise<{ pole: str
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-black py-20 text-white md:py-28">
-        <TechBackground />
         <Container className="relative grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <p className="eyebrow text-accent">

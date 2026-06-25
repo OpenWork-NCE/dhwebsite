@@ -14,6 +14,7 @@ export default function ActualitesPage() {
         title="Analyses pour dirigeants qui veulent agir, pas seulement suivre la tendance."
         subtitle="IA, cybersecurite, souverainete, agents, data et transformation : nos lectures du marche et nos conseils operationnels."
         scene="book"
+        image="/domains/Actualites.png"
       />
       <section className="bg-white py-20 text-ink md:py-24">
         <Container>

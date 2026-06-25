@@ -3,7 +3,6 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import SceneIllustration from "@/components/visuals/SceneIllustration";
-import TechBackground from "@/components/visuals/TechBackground";
 import { secteurs } from "@/data/secteurs";
 import { realisations } from "@/data/realisations";
 import { SITE } from "@/data/site";
@@ -30,7 +29,6 @@ export default async function SecteurPage({ params }: { params: Promise<{ slug: 
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-black py-20 text-white md:py-28">
-        <TechBackground />
         <Container className="relative grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <p className="eyebrow text-accent">Secteur</p>

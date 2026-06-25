@@ -14,6 +14,7 @@ export default function RessourcesPage() {
         title="Le centre de preuves et d'analyses Digital House."
         subtitle="Etudes de cas, publications, visions marche et actifs de reference pour comprendre, cadrer et deployer une transformation IA qui produit des resultats."
         scene="book"
+        image="/domains/Ressources.png"
       />
 
       <section className="bg-white py-16 text-ink md:py-20">

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SceneIllustration from "@/components/visuals/SceneIllustration";
-import TechBackground from "@/components/visuals/TechBackground";
 
 type Scene = Parameters<typeof SceneIllustration>[0]["scene"];
 
@@ -21,7 +20,6 @@ export default function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-black py-20 text-white md:py-28">
-      <TechBackground />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
       <Container className="relative grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>

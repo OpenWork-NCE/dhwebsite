@@ -4,14 +4,12 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import LogoCloud from "@/components/visuals/LogoCloud";
-import TechBackground from "@/components/visuals/TechBackground";
 import { HOME_REINVENTION, SITE } from "@/data/site";
 
 export default function Home() {
   return (
     <>
       <section className="relative overflow-hidden bg-black text-white">
-        <TechBackground />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
         <Container className="relative grid min-h-[calc(100vh-6rem)] items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
           <Reveal>

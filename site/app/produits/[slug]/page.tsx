@@ -3,7 +3,6 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import SceneIllustration from "@/components/visuals/SceneIllustration";
-import TechBackground from "@/components/visuals/TechBackground";
 import { produits } from "@/data/produits";
 import { CheckCircle2, Target, Layers, HelpCircle } from "lucide-react";
 
@@ -26,7 +25,6 @@ export default async function ProduitPage({ params }: { params: Promise<{ slug: 
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-black py-20 text-white md:py-28">
-        <TechBackground />
         <Container className="relative grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <p className="eyebrow text-accent">{produit.categorie}</p>
